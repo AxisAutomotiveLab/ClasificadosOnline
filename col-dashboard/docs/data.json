@@ -1,0 +1,2368 @@
+{
+  "updated_at": "09 Jun 2026, 07:35 PM UTC",
+  "updated_at_iso": "2026-06-09T19:35:46.802707+00:00",
+  "dealers": [
+    {
+      "id": "34602",
+      "name": "Autocentro Mas",
+      "location": "San Juan - Río Piedras",
+      "is_own": true,
+      "total": 107,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=34602",
+      "vehicles": [
+        {
+          "manufacturer": "Acura",
+          "model": "Acura MDX",
+          "year": 2026,
+          "price": 79995
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2021,
+          "price": 30995
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura MDX",
+          "year": 2026,
+          "price": 87995
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2025,
+          "price": 63995
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura ADX",
+          "year": 2025,
+          "price": 53995
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2025,
+          "price": 64995
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura ILX",
+          "year": 2019,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi Q5",
+          "year": 2022,
+          "price": 40995
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi A4",
+          "year": 2021,
+          "price": 31995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330",
+          "year": 2025,
+          "price": 59995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2026,
+          "price": 59995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2025,
+          "price": 79995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2023,
+          "price": 38995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW i4",
+          "year": 2024,
+          "price": 59995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X2",
+          "year": 2025,
+          "price": 52995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2025,
+          "price": 139995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2026,
+          "price": 72995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2025,
+          "price": 74995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X7",
+          "year": 2022,
+          "price": 49995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-5",
+          "year": 2025,
+          "price": 139995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X2",
+          "year": 2025,
+          "price": 52995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2026,
+          "price": 149995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3e",
+          "year": 2021,
+          "price": 29995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "iX",
+          "year": 2025,
+          "price": 89995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2022,
+          "price": 45995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2022,
+          "price": 37995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 440",
+          "year": 2025,
+          "price": 76995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 530E",
+          "year": 2019,
+          "price": 24995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2026,
+          "price": 59995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330",
+          "year": 2025,
+          "price": 63995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2023,
+          "price": 54995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2022,
+          "price": 45995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X7",
+          "year": 2019,
+          "price": 38995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2025,
+          "price": 53995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2021,
+          "price": 38995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 124995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 179995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 114995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 108995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 112995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 113995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 109995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 109995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Odyssey",
+          "year": 2021,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Kona",
+          "year": 2022,
+          "price": 17995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Venue",
+          "year": 2025,
+          "price": 21995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Palisade",
+          "year": 2024,
+          "price": 28875
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Elantra",
+          "year": 2024,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Elantra",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Infiniti",
+          "model": "Infiniti QX60",
+          "year": 2024,
+          "price": 49995
+        }
+      ],
+      "price_min": 17995,
+      "price_max": 179995,
+      "price_avg": 66813
+    },
+    {
+      "id": "1158",
+      "name": "CAGUAX Auto Sales",
+      "location": "Caguas",
+      "is_own": false,
+      "total": 194,
+      "prices_hidden": true,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=1158",
+      "vehicles": [
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2020,
+          "price": null
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2019,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2020,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 550",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330",
+          "year": 2021,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X4",
+          "year": 2021,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330",
+          "year": 2020,
+          "price": null
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Malibu",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Malibu",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Equinox",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Chrysler",
+          "model": "Chrysler 300",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Chrysler",
+          "model": "Pacifica",
+          "year": 2019,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Challenger",
+          "year": 2021,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2007,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2021,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "EcoSport",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Ranger",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2006,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2021,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2018,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2025,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Escape",
+          "year": 2020,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "HRV",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Pilot",
+          "year": 2019,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Accord",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Accord",
+          "year": 2018,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Ridgeline",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Pilot",
+          "year": 2019,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "HRV",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "CR-V",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Civic",
+          "year": 2019,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Passport",
+          "year": 2023,
+          "price": null
+        }
+      ],
+      "price_min": 19995,
+      "price_max": 19995,
+      "price_avg": 19995
+    },
+    {
+      "id": "5439",
+      "name": "PITA Auto Sales",
+      "location": "Carolina",
+      "is_own": false,
+      "total": 181,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=5439",
+      "vehicles": [
+        {
+          "manufacturer": "Audi",
+          "model": "Audi A4",
+          "year": 2018,
+          "price": 19995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-5",
+          "year": 2025,
+          "price": 149995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X4",
+          "year": 2019,
+          "price": 38995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 428",
+          "year": 2016,
+          "price": 15995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2022,
+          "price": 114995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Silverado",
+          "year": 2021,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Chrysler",
+          "model": "Pacifica",
+          "year": 2023,
+          "price": 33995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Charger",
+          "year": 2023,
+          "price": 99995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Durango",
+          "year": 2023,
+          "price": 33995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Challenger",
+          "year": 2023,
+          "price": 36995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Challenger",
+          "year": 2023,
+          "price": 66999
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Challenger",
+          "year": 2023,
+          "price": 39999
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2024,
+          "price": 36995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2024,
+          "price": 64995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2023,
+          "price": 25995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Raptor",
+          "year": 2023,
+          "price": 79995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Maverick",
+          "year": 2023,
+          "price": 33995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2023,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2024,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2023,
+          "price": 22995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2024,
+          "price": 22995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2023,
+          "price": 64995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2024,
+          "price": 37995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Raptor",
+          "year": 2024,
+          "price": 79995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Explorer",
+          "year": 2022,
+          "price": 21995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2022,
+          "price": 37995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2022,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Escape",
+          "year": 2022,
+          "price": 12995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Escape",
+          "year": 2022,
+          "price": 12995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2022,
+          "price": 49999
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": 48888
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": 38995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2020,
+          "price": 31995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2022,
+          "price": 28888
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2023,
+          "price": 44444
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Ranger",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2021,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2021,
+          "price": 18995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2024,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2021,
+          "price": 26995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2023,
+          "price": 36999
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": 48888
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": 48888
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2023,
+          "price": 35555
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2022,
+          "price": 23995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2022,
+          "price": 24595
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2023,
+          "price": 33333
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2020,
+          "price": 33595
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2022,
+          "price": null
+        }
+      ],
+      "price_min": 12995,
+      "price_max": 149995,
+      "price_avg": 41263
+    },
+    {
+      "id": "4161",
+      "name": "Villa Victoria",
+      "location": "Caguas",
+      "is_own": false,
+      "total": 142,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=4161",
+      "vehicles": [
+        {
+          "manufacturer": "Acura",
+          "model": "Acura MDX",
+          "year": 2025,
+          "price": 74995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2023,
+          "price": 49995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2025,
+          "price": 79995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2023,
+          "price": 47995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-2",
+          "year": 2025,
+          "price": 113995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2025,
+          "price": 99995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2025,
+          "price": 79995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2025,
+          "price": 79995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2025,
+          "price": 64995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X2",
+          "year": 2024,
+          "price": 59995
+        },
+        {
+          "manufacturer": "Cadillac",
+          "model": "Escalade",
+          "year": 2026,
+          "price": 163995
+        },
+        {
+          "manufacturer": "Cadillac",
+          "model": "XT5",
+          "year": 2017,
+          "price": 22995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Malibu",
+          "year": 2024,
+          "price": 27995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2020,
+          "price": 94995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Silverado",
+          "year": 2022,
+          "price": 59995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Equinox",
+          "year": 2024,
+          "price": 25995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Trax",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Colorado",
+          "year": 2019,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Equinox",
+          "year": 2023,
+          "price": 24995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Equinox",
+          "year": 2021,
+          "price": 17995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Equinox",
+          "year": 2021,
+          "price": 17995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Durango",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ferrari",
+          "model": "Roma",
+          "year": 2021,
+          "price": 239995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Maverick",
+          "year": 2022,
+          "price": 25995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Explorer",
+          "year": 2021,
+          "price": 38995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Maverick",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Bronco",
+          "year": 2021,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Raptor",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Ranger",
+          "year": 2022,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2023,
+          "price": 43995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Raptor",
+          "year": 2025,
+          "price": 138995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Ranger",
+          "year": 2024,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Explorer",
+          "year": 2025,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Raptor",
+          "year": 2019,
+          "price": 44995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Ranger",
+          "year": 2022,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Maverick",
+          "year": 2023,
+          "price": 31995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "EcoSport",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2023,
+          "price": 33995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Cargo Van",
+          "year": 2023,
+          "price": 33995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Ranger",
+          "year": 2022,
+          "price": 33995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Escape",
+          "year": 2020,
+          "price": 17995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2020,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Odyssey",
+          "year": 2022,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Pilot",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Odyssey",
+          "year": 2019,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Accord",
+          "year": 2022,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Kona",
+          "year": 2025,
+          "price": 27995
+        }
+      ],
+      "price_min": 17995,
+      "price_max": 239995,
+      "price_avg": 54185
+    },
+    {
+      "id": "568",
+      "name": "Eurojapon",
+      "location": "Bayamón",
+      "is_own": false,
+      "total": 125,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=568",
+      "vehicles": [
+        {
+          "manufacturer": "Audi",
+          "model": "Audi Q5",
+          "year": 2022,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi A4",
+          "year": 2021,
+          "price": 22995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2021,
+          "price": 44995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2022,
+          "price": 31995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330",
+          "year": 2021,
+          "price": 28995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2020,
+          "price": 21995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 530E",
+          "year": 2019,
+          "price": 22995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2021,
+          "price": 39995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2022,
+          "price": 89995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2020,
+          "price": 74995
+        },
+        {
+          "manufacturer": "Ferrari",
+          "model": "Roma",
+          "year": 2022,
+          "price": 410000
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2021,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Raptor",
+          "year": 2019,
+          "price": 59995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2022,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Accord",
+          "year": 2021,
+          "price": 24995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Civic",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Tucson",
+          "year": 2022,
+          "price": 22995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Santa Fe",
+          "year": 2021,
+          "price": 25995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Palisade",
+          "year": 2022,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Kia",
+          "model": "Sportage",
+          "year": 2022,
+          "price": 24995
+        },
+        {
+          "manufacturer": "Kia",
+          "model": "Sorento",
+          "year": 2021,
+          "price": 27995
+        },
+        {
+          "manufacturer": "Lexus",
+          "model": "Lexus RX",
+          "year": 2021,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Mazda",
+          "model": "CX-5",
+          "year": 2022,
+          "price": 25995
+        },
+        {
+          "manufacturer": "Mitsubishi",
+          "model": "Outlander",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Nissan",
+          "model": "Rogue",
+          "year": 2022,
+          "price": 22995
+        },
+        {
+          "manufacturer": "Nissan",
+          "model": "Pathfinder",
+          "year": 2021,
+          "price": 28995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Camry",
+          "year": 2022,
+          "price": 24995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "RAV4",
+          "year": 2022,
+          "price": 28995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Highlander",
+          "year": 2021,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Volkswagen",
+          "model": "Tiguan",
+          "year": 2022,
+          "price": 25995
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi Q7",
+          "year": 2021,
+          "price": 44995
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi A6",
+          "year": 2020,
+          "price": 34995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X7",
+          "year": 2020,
+          "price": 59995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 740",
+          "year": 2019,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Cadillac",
+          "model": "Escalade",
+          "year": 2021,
+          "price": 69995
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Silverado",
+          "year": 2021,
+          "price": 39995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Challenger",
+          "year": 2021,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Durango",
+          "year": 2021,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Explorer",
+          "year": 2022,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Edge",
+          "year": 2021,
+          "price": 24995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Pilot",
+          "year": 2022,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Odyssey",
+          "year": 2021,
+          "price": 32995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Sonata",
+          "year": 2022,
+          "price": 19995
+        },
+        {
+          "manufacturer": "Infiniti",
+          "model": "QX60",
+          "year": 2021,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Jeep",
+          "model": "Grand Cherokee",
+          "year": 2021,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Kia",
+          "model": "Telluride",
+          "year": 2022,
+          "price": 34995
+        },
+        {
+          "manufacturer": "Lincoln",
+          "model": "Navigator",
+          "year": 2020,
+          "price": 54995
+        },
+        {
+          "manufacturer": "Mercedes Benz",
+          "model": "GLE",
+          "year": 2020,
+          "price": 44995
+        },
+        {
+          "manufacturer": "Subaru",
+          "model": "Outback",
+          "year": 2022,
+          "price": 26995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "4Runner",
+          "year": 2021,
+          "price": 39995
+        }
+      ],
+      "price_min": 19995,
+      "price_max": 410000,
+      "price_avg": 43115
+    },
+    {
+      "id": "6160",
+      "name": "Autogermana Pre-Owned",
+      "location": "San Juan - Hato Rey",
+      "is_own": false,
+      "total": 62,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=6160",
+      "vehicles": [
+        {
+          "manufacturer": "Audi",
+          "model": "Audi Q5",
+          "year": 2022,
+          "price": 29995
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi RSQ-8",
+          "year": 2022,
+          "price": 99995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330E",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2025,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2025,
+          "price": 49995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2024,
+          "price": 67995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2026,
+          "price": 71995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2026,
+          "price": 84519
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2026,
+          "price": 97995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-5",
+          "year": 2026,
+          "price": 142000
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "XM",
+          "year": 2024,
+          "price": 127995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330E",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2024,
+          "price": 139995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X7",
+          "year": 2022,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 330E",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2022,
+          "price": 92995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "iX",
+          "year": 2025,
+          "price": 59995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X4",
+          "year": 2023,
+          "price": 58995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X7",
+          "year": 2022,
+          "price": 57995
+        },
+        {
+          "manufacturer": "XM",
+          "model": "XM",
+          "year": 2024,
+          "price": 129995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2023,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2024,
+          "price": 87995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "XM",
+          "year": 2024,
+          "price": 114995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW 430",
+          "year": 2023,
+          "price": 48995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X2",
+          "year": 2026,
+          "price": null
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2023,
+          "price": 44995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "XM",
+          "year": 2025,
+          "price": 125995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW Serie Z",
+          "year": 2025,
+          "price": 94995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-5",
+          "year": 2025,
+          "price": 131995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2023,
+          "price": 52995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2022,
+          "price": 73995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2022,
+          "price": 73995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2022,
+          "price": 79995
+        },
+        {
+          "manufacturer": "Genesis",
+          "model": "GV70",
+          "year": 2025,
+          "price": 46995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Palisade",
+          "year": 2023,
+          "price": 42995
+        },
+        {
+          "manufacturer": "Jeep",
+          "model": "Grand Wagoneer",
+          "year": 2022,
+          "price": 44995
+        },
+        {
+          "manufacturer": "Jeep",
+          "model": "Grand Cherokee",
+          "year": 2023,
+          "price": 46995
+        },
+        {
+          "manufacturer": "LandRover",
+          "model": "Defender",
+          "year": 2023,
+          "price": 74995
+        },
+        {
+          "manufacturer": "Mercedes Benz",
+          "model": "Clase G",
+          "year": 2022,
+          "price": 72995
+        },
+        {
+          "manufacturer": "Mercedes Benz",
+          "model": "G580 EQ",
+          "year": 2025,
+          "price": 169995
+        },
+        {
+          "manufacturer": "Mercedes Benz",
+          "model": "GLE",
+          "year": 2022,
+          "price": 49995
+        },
+        {
+          "manufacturer": "MINI",
+          "model": "Cooper Countryman",
+          "year": 2025,
+          "price": 41995
+        },
+        {
+          "manufacturer": "MINI",
+          "model": "Cooper",
+          "year": 2024,
+          "price": 29995
+        },
+        {
+          "manufacturer": "MINI",
+          "model": "Cooper",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "MINI",
+          "model": "Cooper",
+          "year": 2024,
+          "price": null
+        },
+        {
+          "manufacturer": "MINI",
+          "model": "Cooper Countryman",
+          "year": 2025,
+          "price": 44995
+        }
+      ],
+      "price_min": 29995,
+      "price_max": 169995,
+      "price_avg": 78658
+    },
+    {
+      "id": "35021",
+      "name": "CARPRO",
+      "location": "San Juan - Río Piedras",
+      "is_own": false,
+      "total": 51,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=35021",
+      "vehicles": [
+        {
+          "manufacturer": "Acura",
+          "model": "Acura MDX",
+          "year": 2026,
+          "price": 69900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura MDX",
+          "year": 2025,
+          "price": 92900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2025,
+          "price": 59900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2025,
+          "price": 59900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura MDX",
+          "year": 2025,
+          "price": 95900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2024,
+          "price": 59900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Acura RDX",
+          "year": 2023,
+          "price": 57900
+        },
+        {
+          "manufacturer": "Acura",
+          "model": "Integra",
+          "year": 2024,
+          "price": 67900
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi Q8",
+          "year": 2025,
+          "price": 99900
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi RS3",
+          "year": 2024,
+          "price": 82900
+        },
+        {
+          "manufacturer": "Audi",
+          "model": "Audi RS3",
+          "year": 2024,
+          "price": 82900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2021,
+          "price": 44900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2026,
+          "price": 89900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5E",
+          "year": 2018,
+          "price": 19900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2026,
+          "price": 129900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2018,
+          "price": 19900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2026,
+          "price": 104900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2025,
+          "price": 79900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2025,
+          "price": 99900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2025,
+          "price": 124900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X4",
+          "year": 2025,
+          "price": 79900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2025,
+          "price": 82900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X4",
+          "year": 2025,
+          "price": 75900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X4",
+          "year": 2025,
+          "price": 72900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2025,
+          "price": 79900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2024,
+          "price": 109900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2025,
+          "price": 114900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-2",
+          "year": 2024,
+          "price": 104900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-4",
+          "year": 2024,
+          "price": 99900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-2",
+          "year": 2024,
+          "price": 104900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2025,
+          "price": 89900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X5",
+          "year": 2024,
+          "price": 77900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2024,
+          "price": 67900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X1",
+          "year": 2024,
+          "price": 67900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X3",
+          "year": 2024,
+          "price": 79900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW X6",
+          "year": 2024,
+          "price": 114900
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2023,
+          "price": 119900
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2024,
+          "price": 69900
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Civic",
+          "year": 2025,
+          "price": 59900
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "S2000",
+          "year": 2004,
+          "price": 49900
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Civic",
+          "year": 2024,
+          "price": 59900
+        },
+        {
+          "manufacturer": "LandRover",
+          "model": "Range Rover",
+          "year": 2023,
+          "price": 79900
+        },
+        {
+          "manufacturer": "Lexus",
+          "model": "Lexus RX",
+          "year": 2026,
+          "price": 104900
+        },
+        {
+          "manufacturer": "Lexus",
+          "model": "Lexus GX",
+          "year": 2025,
+          "price": 124900
+        },
+        {
+          "manufacturer": "Lexus",
+          "model": "Lexus GX",
+          "year": 2025,
+          "price": 129900
+        },
+        {
+          "manufacturer": "Lexus",
+          "model": "Lexus GX",
+          "year": 2025,
+          "price": 129900
+        },
+        {
+          "manufacturer": "Lexus",
+          "model": "Lexus RX",
+          "year": 2024,
+          "price": 83900
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Corolla GR",
+          "year": 2023,
+          "price": 67900
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Tacoma",
+          "year": 2021,
+          "price": 39900
+        },
+        {
+          "manufacturer": "Volkswagen",
+          "model": "Golf R",
+          "year": 2025,
+          "price": 59900
+        }
+      ],
+      "price_min": 19900,
+      "price_max": 129900,
+      "price_avg": 82980
+    },
+    {
+      "id": "27205",
+      "name": "Stuttgart Auto",
+      "location": "Caguas",
+      "is_own": false,
+      "total": 25,
+      "prices_hidden": false,
+      "url": "https://www.clasificadosonline.com/PartnersListingTranspID.asp?ID=27205",
+      "vehicles": [
+        {
+          "manufacturer": "Audi",
+          "model": "Audi Q8",
+          "year": 2020,
+          "price": 39995
+        },
+        {
+          "manufacturer": "BMW",
+          "model": "BMW M-3",
+          "year": 2025,
+          "price": 129895
+        },
+        {
+          "manufacturer": "Chevrolet",
+          "model": "Corvette",
+          "year": 2026,
+          "price": 109995
+        },
+        {
+          "manufacturer": "Dodge",
+          "model": "Viper",
+          "year": 2014,
+          "price": null
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2024,
+          "price": 45995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2022,
+          "price": 54995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "F-150",
+          "year": 2023,
+          "price": 78995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Mustang",
+          "year": 2020,
+          "price": 84995
+        },
+        {
+          "manufacturer": "Ford",
+          "model": "Transit Connect",
+          "year": 2022,
+          "price": 28995
+        },
+        {
+          "manufacturer": "Honda",
+          "model": "Civic",
+          "year": 2025,
+          "price": 64995
+        },
+        {
+          "manufacturer": "Hyundai",
+          "model": "Tucson",
+          "year": 2021,
+          "price": 16995
+        },
+        {
+          "manufacturer": "Kia",
+          "model": "Optima",
+          "year": 2020,
+          "price": 17995
+        },
+        {
+          "manufacturer": "Mazda",
+          "model": "RX7",
+          "year": 1981,
+          "price": 31995
+        },
+        {
+          "manufacturer": "Nissan",
+          "model": "Rogue",
+          "year": 2023,
+          "price": 23995
+        },
+        {
+          "manufacturer": "Nissan",
+          "model": "Pathfinder",
+          "year": 2023,
+          "price": 23995
+        },
+        {
+          "manufacturer": "Nissan",
+          "model": "Rogue",
+          "year": 2023,
+          "price": 23995
+        },
+        {
+          "manufacturer": "Porsche",
+          "model": "Carrera",
+          "year": 2024,
+          "price": 197995
+        },
+        {
+          "manufacturer": "RAM",
+          "model": "Promaster",
+          "year": 2024,
+          "price": 46995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Prius",
+          "year": 2026,
+          "price": 52995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Tacoma",
+          "year": 2024,
+          "price": 36995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "4Runner",
+          "year": 2023,
+          "price": 41995
+        },
+        {
+          "manufacturer": "Toyota",
+          "model": "Rav4 Hybrid",
+          "year": 2023,
+          "price": 31995
+        },
+        {
+          "manufacturer": "Volkswagen",
+          "model": "ID. Buzz",
+          "year": 2025,
+          "price": null
+        },
+        {
+          "manufacturer": "Volkswagen",
+          "model": "Golf R",
+          "year": 2025,
+          "price": 64995
+        },
+        {
+          "manufacturer": "Volvo",
+          "model": "Volvo C30",
+          "year": 2012,
+          "price": 13995
+        }
+      ],
+      "price_min": 13995,
+      "price_max": 197995,
+      "price_avg": 55034
+    }
+  ]
+}

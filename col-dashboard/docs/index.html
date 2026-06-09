@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Competitivo — Clasificados Online PR</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --bg:        #0d1117;
+  --surface:   #161b22;
+  --surface2:  #21262d;
+  --border:    rgba(255,255,255,0.08);
+  --border2:   rgba(255,255,255,0.14);
+  --text:      #e6edf3;
+  --muted:     #8b949e;
+  --own:       #378ADD;
+  --own-light: rgba(55,138,221,0.12);
+  --own-glow:  rgba(55,138,221,0.35);
+  --red:    #E24B4A; --amber: #BA7517; --green: #639922;
+  --teal:   #1D9E75; --purple:#7F77DD; --gray:  #888780;
+  --pink:   #D4537E; --coral: #E86B3A;
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.6}
+a{color:var(--own);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* layout */
+.header{padding:24px 28px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:16px}
+.header-left h1{font-size:20px;font-weight:600;letter-spacing:-.3px}
+.header-left p{font-size:12px;color:var(--muted);margin-top:3px}
+.last-update{font-size:11px;color:var(--muted);white-space:nowrap}
+.last-update span{color:var(--text)}
+.stale-badge{background:rgba(186,117,23,.15);color:#EF9F27;border:1px solid rgba(186,117,23,.3);font-size:11px;padding:3px 10px;border-radius:20px;margin-left:8px}
+
+main{padding:20px 28px 40px}
+
+/* filters */
+.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px}
+.filter-bar h2{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.filter-tabs{display:flex;gap:6px;margin-bottom:12px}
+.ftab{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:12px;padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .15s}
+.ftab.active{background:var(--own);border-color:var(--own);color:#fff}
+.filter-group{display:none;flex-wrap:wrap;gap:6px}
+.filter-group.visible{display:flex}
+.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:12px;padding:4px 12px;border-radius:20px;cursor:pointer;transition:all .15s;user-select:none}
+.chip:hover{border-color:var(--border2);color:var(--text)}
+.chip.active{border-color:var(--own);color:var(--own);background:var(--own-light)}
+.filter-actions{display:flex;gap:8px;margin-top:10px}
+.btn-sm{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:11px;padding:4px 12px;border-radius:6px;cursor:pointer}
+.btn-sm:hover{border-color:var(--border2);color:var(--text)}
+
+/* kpis */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.kpi.own{border-color:var(--own-glow);background:var(--own-light)}
+.kpi-label{font-size:11px;color:var(--muted);margin-bottom:4px}
+.kpi-value{font-size:24px;font-weight:600;color:var(--text)}
+.kpi.own .kpi-value{color:var(--own)}
+.kpi-sub{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* grid layouts */
+.charts-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.charts-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.charts-1{margin-bottom:16px}
+
+/* chart cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.card h3{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+.card .card-sub{font-size:11px;color:var(--muted);margin-bottom:12px}
+.canvas-wrap{position:relative}
+
+/* section labels */
+.section-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px}
+
+/* table */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{font-size:11px;font-weight:500;color:var(--muted);text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);background:var(--surface2);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr.own-row td{background:var(--own-light)}
+tr.own-row td:first-child{border-left:3px solid var(--own);padding-left:9px}
+.badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px}
+.b-green{background:rgba(99,153,34,.15);color:#97C459}
+.b-red{background:rgba(226,75,74,.15);color:#E24B4A}
+.b-amber{background:rgba(186,117,23,.15);color:#EF9F27}
+.b-blue{background:rgba(55,138,221,.15);color:#378ADD}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.leg{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+.leg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+
+/* insights */
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.insight{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.insight-tag{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.insight-val{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
+.insight-desc{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* analysis */
+.analysis-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.analysis-card h3{font-size:14px;font-weight:600;margin-bottom:6px}
+.analysis-card p{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.analysis-card ul{padding-left:16px}
+.analysis-card li{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:4px}
+.analysis-card li strong{color:var(--text)}
+
+/* no-data */
+.no-data{display:flex;align-items:center;justify-content:center;height:180px;color:var(--muted);font-size:12px}
+
+/* loading */
+#loading{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:999}
+.spinner{width:32px;height:32px;border:3px solid var(--border2);border-top-color:var(--own);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loading p{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .charts-2,.charts-3{grid-template-columns:1fr}
+  .insights-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <p>Cargando datos del mercado…</p>
+</div>
+
+<div id="app" style="display:none">
+
+<header class="header">
+  <div class="header-left">
+    <h1>Dashboard Competitivo — Clasificados Online PR</h1>
+    <p>Autocentro Mas · Análisis de mercado de dealers · San Juan, Puerto Rico</p>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <div class="last-update">Última actualización: <span id="last-update-text">—</span></div>
+    <div id="stale-badge" class="stale-badge" style="display:none">Datos del día anterior</div>
+  </div>
+</header>
+
+<main>
+
+<!-- FILTERS -->
+<div class="filter-bar">
+  <h2>Filtros</h2>
+  <div class="filter-tabs">
+    <button class="ftab active" onclick="switchTab('marca')">Marca</button>
+    <button class="ftab" onclick="switchTab('año')">Año</button>
+    <button class="ftab" onclick="switchTab('dealer')">Dealer</button>
+  </div>
+  <div id="tab-marca" class="filter-group visible" id="chips-marca"></div>
+  <div id="tab-año"   class="filter-group" id="chips-año"></div>
+  <div id="tab-dealer" class="filter-group" id="chips-dealer"></div>
+  <div class="filter-actions">
+    <button class="btn-sm" onclick="selectAll()">Seleccionar todo</button>
+    <button class="btn-sm" onclick="clearAll()">Limpiar filtros</button>
+  </div>
+</div>
+
+<!-- KPIs -->
+<div class="kpi-grid">
+  <div class="kpi own">
+    <div class="kpi-label">Autocentro Mas — inventario filtrado</div>
+    <div class="kpi-value" id="kpi-own">—</div>
+    <div class="kpi-sub" id="kpi-own-pct">—</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Total competencia (filtrado)</div>
+    <div class="kpi-value" id="kpi-total">—</div>
+    <div class="kpi-sub" id="kpi-total-sub">8 dealers monitoreados</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Precio promedio — Autocentro Mas</div>
+    <div class="kpi-value" id="kpi-avg">—</div>
+    <div class="kpi-sub" id="kpi-avg-sub">Basado en unidades con precio visible</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Dealers que ocultan precio</div>
+    <div class="kpi-value" id="kpi-hidden">—</div>
+    <div class="kpi-sub">Del total de 8 dealers</div>
+  </div>
+</div>
+
+<!-- CHARTS ROW 1 -->
+<div class="section-label">Inventario y volumen</div>
+<div class="charts-2">
+  <div class="card">
+    <h3>Inventario por dealer</h3>
+    <div class="card-sub">Unidades publicadas en COL</div>
+    <div class="canvas-wrap" style="height:240px"><canvas id="c-inv"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Distribución de años en inventario</h3>
+    <div class="card-sub">Todos los años de los vehículos publicados</div>
+    <div class="canvas-wrap" style="height:240px"><canvas id="c-years"></canvas></div>
+  </div>
+</div>
+
+<!-- CHARTS ROW 2 -->
+<div class="section-label">Precios</div>
+<div class="charts-2">
+  <div class="card">
+    <h3>Rango de precios por dealer</h3>
+    <div class="card-sub">Precio mínimo y máximo publicado (unidades con precio visible)</div>
+    <div class="canvas-wrap" style="height:260px"><canvas id="c-range"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Precio promedio estimado</h3>
+    <div class="card-sub">Ordenado de mayor a menor</div>
+    <div class="canvas-wrap" style="height:260px"><canvas id="c-avg"></canvas></div>
+  </div>
+</div>
+
+<!-- CHARTS ROW 3 -->
+<div class="section-label">Marcas</div>
+<div class="charts-2">
+  <div class="card">
+    <h3>Top marcas — Autocentro Mas vs mercado</h3>
+    <div class="card-sub">Número de unidades por marca</div>
+    <div class="canvas-wrap" style="height:260px"><canvas id="c-brands"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Todas las marcas publicadas</h3>
+    <div class="card-sub">Detalle completo por dealer</div>
+    <div id="brand-table-wrap" style="max-height:280px;overflow-y:auto"></div>
+  </div>
+</div>
+
+<!-- CHARTS ROW 4 -->
+<div class="section-label">Análisis adicional</div>
+<div class="charts-3">
+  <div class="card">
+    <h3>Precio por año de modelo</h3>
+    <div class="card-sub">Promedio de precio por año</div>
+    <div class="canvas-wrap" style="height:220px"><canvas id="c-year-price"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Volumen por marca — mercado total</h3>
+    <div class="card-sub">Top 10 marcas más ofertadas</div>
+    <div class="canvas-wrap" style="height:220px"><canvas id="c-mkt-brands"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Concentración premium vs económico</h3>
+    <div class="card-sub">Unidades sobre / bajo $50K por dealer</div>
+    <div class="canvas-wrap" style="height:220px"><canvas id="c-segments"></canvas></div>
+  </div>
+</div>
+
+<!-- OPERATIONAL TABLE -->
+<div class="section-label">Tabla operativa</div>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Dealer</th>
+        <th>Ubicación</th>
+        <th>Unidades</th>
+        <th>Precio mín</th>
+        <th>Precio máx</th>
+        <th>Precio prom</th>
+        <th>Precio visible</th>
+        <th>Marca principal</th>
+        <th>COL</th>
+      </tr>
+    </thead>
+    <tbody id="op-table-body"></tbody>
+  </table>
+</div>
+
+<!-- INSIGHTS -->
+<div class="section-label">Insights clave</div>
+<div class="insights-grid" id="insights-container"></div>
+
+<!-- ANALYSIS SECTION -->
+<div class="section-label">Análisis y recomendaciones</div>
+
+<div class="analysis-card">
+  <h3>📊 Gráficas recomendadas para próximas versiones</h3>
+  <p>Con la data histórica acumulada (múltiples días de scraping) se podrán construir las siguientes visualizaciones de alto valor:</p>
+  <ul>
+    <li><strong>Velocidad de rotación de inventario:</strong> rastrear cuántos días permanece un vehículo en COL antes de desaparecer. Indica qué modelos se venden más rápido en el mercado.</li>
+    <li><strong>Tendencia de precio por modelo:</strong> gráfica de línea mostrando si los precios de BMW X5 o Corvette suben/bajan semana a semana por dealer.</li>
+    <li><strong>Heatmap de actividad:</strong> qué día de la semana publican más unidades los competidores (indica días de mayor actividad comercial).</li>
+    <li><strong>Radar de competitividad:</strong> comparar Autocentro Mas vs cada competidor en 5 dimensiones — volumen, precio, frescura de inventario, diversidad de marcas, transparencia de precios.</li>
+    <li><strong>Funel de segmento:</strong> distribución de unidades en rangos de precio ($0-25K, $25-50K, $50-75K, $75K+) por dealer.</li>
+  </ul>
+</div>
+
+<div class="analysis-card">
+  <h3>🎯 Posicionamiento estratégico — Autocentro Mas</h3>
+  <p>Basado en el análisis del inventario actual de los 8 dealers monitoreados:</p>
+  <ul>
+    <li><strong>Fortaleza principal:</strong> Único dealer que combina precio visible, branding "PRE-LOVED COMO NUEVO", y Corvettes importados en el segmento premium de San Juan.</li>
+    <li><strong>Brecha de volumen:</strong> CAGUAX (líder en volumen) tiene ~80% más inventario. Para alcanzar el 3er lugar en share de mercado se necesitarían ~50 unidades adicionales.</li>
+    <li><strong>Competidor más directo:</strong> CARPRO en la misma zona geográfica, mismo nicho premium BMW/Acura/Lexus, pero con precio promedio más alto (~$82K). Diferenciador: Autocentro Mas tiene más diversidad de marcas.</li>
+    <li><strong>Oportunidad de precio:</strong> Autogermana es el concesionario oficial BMW Pre-Owned con precios altos pero muchos listings sin precio visible — hay espacio para capturar clientes BMW que quieran precio transparente.</li>
+    <li><strong>Nicho sin competencia:</strong> Corvettes importados 2026. Solo Stuttgart tiene 1 Corvette; nadie más los trabaja activamente. Potencial de posicionamiento único como "el dealer del Corvette en PR".</li>
+  </ul>
+</div>
+
+<div class="analysis-card">
+  <h3>⚠️ Alertas competitivas a monitorear</h3>
+  <ul>
+    <li><strong>CAGUAX cambia estrategia de precio:</strong> Si CAGUAX empieza a publicar precios, perderías el diferenciador de transparencia. Monitorear semanalmente.</li>
+    <li><strong>Villa Victoria y Ferrari/Exóticos:</strong> Villa Victoria tiene un Ferrari Roma $239K y escaladas de Cadillac $163K. Están explorando el segmento ultra-lujo. Autogermana tiene G-Wagon $169K.</li>
+    <li><strong>Autogermana actualización frecuente:</strong> Como concesionario oficial BMW, recibe inventario certificado constantemente. Sus precios sin publicar pueden estar capturando leads que luego compiten contigo.</li>
+    <li><strong>Stuttgart boutique premium:</strong> Solo 25 unidades pero incluye Porsche 911 $197K, BMW M3 $129K, Corvette $109K. Dealer boutique que podría escalar.</li>
+  </ul>
+</div>
+
+<div class="analysis-card">
+  <h3>📈 Tablas adicionales recomendadas</h3>
+  <p>Para enriquecer el dashboard con los datos actuales disponibles:</p>
+  <ul>
+    <li><strong>Tabla de solapamiento de marcas:</strong> qué marcas trabaja cada dealer — para identificar competencia directa modelo por modelo.</li>
+    <li><strong>Ranking de unidades más recientes:</strong> top 10 vehículos por año de modelo más reciente (2026) en el mercado y a qué precio los vende cada dealer.</li>
+    <li><strong>Análisis de títulos/tags:</strong> palabras más usadas en los títulos de anuncios (IMPORTADO, LIQUIDACION, PRE-LOVED) por dealer — indica estrategias de marketing.</li>
+    <li><strong>Tabla de precio por modelo específico:</strong> ej. todos los BMW X5 en el mercado, de qué año son y a qué precio los tiene cada dealer — para benchmarking directo.</li>
+  </ul>
+</div>
+
+</main>
+</div><!-- #app -->
+
+<script>
+const DEALER_COLORS = {
+  "Autocentro Mas":       "#378ADD",
+  "CAGUAX Auto Sales":    "#E24B4A",
+  "PITA Auto Sales":      "#BA7517",
+  "Villa Victoria":       "#639922",
+  "Eurojapon":            "#1D9E75",
+  "Autogermana Pre-Owned":"#7F77DD",
+  "CARPRO":               "#888780",
+  "Stuttgart Auto":       "#D4537E",
+};
+
+let RAW = null;
+let charts = {};
+
+// Active filters
+let activeMarks  = new Set();
+let activeYears  = new Set();
+let activeDealers = new Set();
+let currentTab   = 'marca';
+
+/* ── LOAD DATA ── */
+async function loadData() {
+  const res = await fetch('data.json?t=' + Date.now());
+  if (!res.ok) throw new Error('No se pudo cargar data.json');
+  RAW = await res.json();
+
+  // check staleness
+  const updatedIso = RAW.updated_at_iso;
+  const updatedDate = new Date(updatedIso);
+  const now = new Date();
+  const hoursOld = (now - updatedDate) / 36e5;
+  document.getElementById('last-update-text').textContent = RAW.updated_at;
+  if (hoursOld > 26) {
+    document.getElementById('stale-badge').style.display = 'inline-block';
+  }
+}
+
+/* ── BUILD FILTER CHIPS ── */
+function buildFilters() {
+  const allVehicles = RAW.dealers.flatMap(d => d.vehicles.map(v => ({...v, dealer: d.name})));
+
+  const marks = [...new Set(allVehicles.map(v => v.manufacturer).filter(Boolean))].sort();
+  const years = [...new Set(allVehicles.map(v => v.year).filter(Boolean))].sort((a,b) => b - a);
+  const dealerNames = RAW.dealers.map(d => d.name);
+
+  activeMarks   = new Set(marks);
+  activeYears   = new Set(years);
+  activeDealers = new Set(dealerNames);
+
+  buildChips('tab-marca', marks, activeMarks, 'marca');
+  buildChips('tab-año', years, activeYears, 'año');
+  buildChips('tab-dealer', dealerNames, activeDealers, 'dealer');
+}
+
+function buildChips(containerId, items, activeSet, type) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = '';
+  items.forEach(item => {
+    const chip = document.createElement('div');
+    chip.className = 'chip' + (activeSet.has(item) ? ' active' : '');
+    chip.textContent = item;
+    chip.onclick = () => toggleChip(chip, item, activeSet, type);
+    el.appendChild(chip);
+  });
+}
+
+function toggleChip(chip, val, set, type) {
+  if (set.has(val)) { set.delete(val); chip.classList.remove('active'); }
+  else { set.add(val); chip.classList.add('active'); }
+  renderAll();
+}
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.ftab').forEach((b,i) => {
+    const tabs = ['marca','año','dealer'];
+    b.classList.toggle('active', tabs[i] === tab);
+  });
+  ['tab-marca','tab-año','tab-dealer'].forEach(id => {
+    document.getElementById(id).classList.toggle('visible', id === 'tab-' + tab);
+  });
+}
+
+function selectAll() {
+  const allVehicles = RAW.dealers.flatMap(d => d.vehicles.map(v => ({...v, dealer: d.name})));
+  if (currentTab === 'marca') {
+    [...new Set(allVehicles.map(v => v.manufacturer).filter(Boolean))].forEach(m => activeMarks.add(m));
+    buildChips('tab-marca', [...activeMarks].sort(), activeMarks, 'marca');
+  } else if (currentTab === 'año') {
+    [...new Set(allVehicles.map(v => v.year).filter(Boolean))].forEach(y => activeYears.add(y));
+    buildChips('tab-año', [...activeYears].sort((a,b) => b-a), activeYears, 'año');
+  } else {
+    RAW.dealers.forEach(d => activeDealers.add(d.name));
+    buildChips('tab-dealer', RAW.dealers.map(d=>d.name), activeDealers, 'dealer');
+  }
+  renderAll();
+}
+
+function clearAll() {
+  if (currentTab === 'marca') { activeMarks.clear(); buildChips('tab-marca', [...new Set(RAW.dealers.flatMap(d=>d.vehicles.map(v=>v.manufacturer)).filter(Boolean))].sort(), activeMarks, 'marca'); }
+  else if (currentTab === 'año') { activeYears.clear(); buildChips('tab-año', [...new Set(RAW.dealers.flatMap(d=>d.vehicles.map(v=>v.year)).filter(Boolean))].sort((a,b)=>b-a), activeYears, 'año'); }
+  else { activeDealers.clear(); buildChips('tab-dealer', RAW.dealers.map(d=>d.name), activeDealers, 'dealer'); }
+  renderAll();
+}
+
+/* ── FILTER VEHICLES ── */
+function filterVehicles(dealer) {
+  if (!activeDealers.has(dealer.name)) return [];
+  return dealer.vehicles.filter(v =>
+    (activeMarks.size === 0 || activeMarks.has(v.manufacturer)) &&
+    (activeYears.size === 0 || activeYears.has(v.year))
+  );
+}
+
+/* ── CHART HELPERS ── */
+function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+
+function mkChart(id, config) {
+  destroyChart(id);
+  const canvas = document.getElementById(id);
+  if (!canvas) return;
+  charts[id] = new Chart(canvas, config);
+}
+
+const GRID_COLOR = 'rgba(255,255,255,0.06)';
+const TICK_COLOR = '#8b949e';
+const baseScales = {
+  x: { ticks: { color: TICK_COLOR, font: { size: 11 } }, grid: { color: GRID_COLOR } },
+  y: { ticks: { color: TICK_COLOR, font: { size: 11 } }, grid: { color: GRID_COLOR } }
+};
+
+/* ── RENDER ALL ── */
+function renderAll() {
+  renderKPIs();
+  renderInventoryChart();
+  renderYearsChart();
+  renderPriceRangeChart();
+  renderAvgPriceChart();
+  renderBrandsChart();
+  renderBrandTable();
+  renderYearPriceChart();
+  renderMktBrandsChart();
+  renderSegmentsChart();
+  renderOperationalTable();
+  renderInsights();
+}
+
+/* KPIs */
+function renderKPIs() {
+  const own = RAW.dealers.find(d => d.is_own);
+  const ownFiltered = filterVehicles(own);
+  const totalFiltered = RAW.dealers.reduce((s,d) => s + filterVehicles(d).length, 0);
+  const ownPrices = ownFiltered.map(v => v.price).filter(Boolean);
+  const ownAvg = ownPrices.length ? Math.round(ownPrices.reduce((a,b)=>a+b,0)/ownPrices.length) : null;
+  const hiddenCount = RAW.dealers.filter(d => d.prices_hidden).length;
+  const pct = totalFiltered > 0 ? ((ownFiltered.length / totalFiltered) * 100).toFixed(1) : 0;
+
+  document.getElementById('kpi-own').textContent = ownFiltered.length.toLocaleString();
+  document.getElementById('kpi-own-pct').textContent = pct + '% del mercado filtrado';
+  document.getElementById('kpi-total').textContent = totalFiltered.toLocaleString();
+  document.getElementById('kpi-avg').textContent = ownAvg ? '$' + ownAvg.toLocaleString() : 'N/D';
+  document.getElementById('kpi-hidden').textContent = hiddenCount + ' / ' + RAW.dealers.length;
+}
+
+/* Inventory bar chart */
+function renderInventoryChart() {
+  const data = RAW.dealers
+    .map(d => ({ name: d.name, count: filterVehicles(d).length, color: DEALER_COLORS[d.name] || '#888' }))
+    .filter(d => activeDealers.has(d.name))
+    .sort((a,b) => b.count - a.count);
+
+  mkChart('c-inv', {
+    type: 'bar',
+    data: {
+      labels: data.map(d => d.name),
+      datasets: [{ data: data.map(d => d.count), backgroundColor: data.map(d => d.color), borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        datalabels: { display: false },
+        tooltip: { callbacks: { label: ctx => ' ' + ctx.raw + ' unidades' } }
+      },
+      scales: {
+        x: { ...baseScales.x, ticks: { ...baseScales.x.ticks } },
+        y: { ...baseScales.y, grid: { display: false } }
+      },
+      animation: { onComplete: function() {
+        const chart = this;
+        const ctx = chart.ctx;
+        ctx.save();
+        ctx.fillStyle = '#e6edf3';
+        ctx.font = '11px -apple-system,sans-serif';
+        ctx.textAlign = 'left';
+        chart.data.datasets[0].data.forEach((val, i) => {
+          const meta = chart.getDatasetMeta(0);
+          const bar = meta.data[i];
+          ctx.fillText(val, bar.x + 4, bar.y + 4);
+        });
+        ctx.restore();
+      }}
+    }
+  });
+}
+
+/* Years distribution */
+function renderYearsChart() {
+  const allV = RAW.dealers.flatMap(d => filterVehicles(d));
+  const yearCounts = {};
+  allV.forEach(v => { if (v.year) yearCounts[v.year] = (yearCounts[v.year]||0) + 1; });
+  const years = Object.keys(yearCounts).sort();
+  const counts = years.map(y => yearCounts[y]);
+
+  mkChart('c-years', {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [{ data: counts, backgroundColor: years.map(y => y >= 2024 ? '#378ADD' : y >= 2022 ? '#7F77DD' : '#444'), borderRadius: 3 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.raw + ' unidades' } } },
+      scales: {
+        x: { ...baseScales.x, ticks: { ...baseScales.x.ticks, maxRotation: 45 } },
+        y: { ...baseScales.y }
+      }
+    }
+  });
+}
+
+/* Price range chart */
+function renderPriceRangeChart() {
+  const dealersWithPrices = RAW.dealers
+    .filter(d => activeDealers.has(d.name))
+    .map(d => {
+      const prices = filterVehicles(d).map(v => v.price).filter(Boolean);
+      return { name: d.name, min: prices.length ? Math.min(...prices) : null, max: prices.length ? Math.max(...prices) : null };
+    })
+    .filter(d => d.min !== null)
+    .sort((a,b) => a.min - b.min);
+
+  mkChart('c-range', {
+    type: 'bar',
+    data: {
+      labels: dealersWithPrices.map(d => d.name),
+      datasets: [
+        { label: 'Desde', data: dealersWithPrices.map(d => d.min), backgroundColor: 'transparent' },
+        { label: 'Rango', data: dealersWithPrices.map(d => d.max - d.min), backgroundColor: dealersWithPrices.map(d => (DEALER_COLORS[d.name]||'#888') + 'AA'), borderColor: dealersWithPrices.map(d => DEALER_COLORS[d.name]||'#888'), borderWidth: 1, borderRadius: 3 }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => {
+          if (ctx.datasetIndex === 0) return null;
+          const d = dealersWithPrices[ctx.dataIndex];
+          return ['Mín: $' + d.min.toLocaleString(), 'Máx: $' + d.max.toLocaleString()];
+        }}}
+      },
+      scales: {
+        x: { ...baseScales.x, stacked: true, ticks: { ...baseScales.x.ticks, callback: v => '$' + (v/1000).toFixed(0) + 'K' } },
+        y: { ...baseScales.y, stacked: true, grid: { display: false } }
+      }
+    }
+  });
+}
+
+/* Avg price chart */
+function renderAvgPriceChart() {
+  const data = RAW.dealers
+    .filter(d => activeDealers.has(d.name))
+    .map(d => {
+      const prices = filterVehicles(d).map(v => v.price).filter(Boolean);
+      return { name: d.name, avg: prices.length ? Math.round(prices.reduce((a,b)=>a+b,0)/prices.length) : null };
+    })
+    .filter(d => d.avg !== null)
+    .sort((a,b) => b.avg - a.avg);
+
+  mkChart('c-avg', {
+    type: 'bar',
+    data: {
+      labels: data.map(d => d.name),
+      datasets: [{ data: data.map(d => Math.round(d.avg/1000)), backgroundColor: data.map(d => DEALER_COLORS[d.name]||'#888'), borderRadius: 4 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ' $' + (ctx.raw).toLocaleString() + 'K promedio' } }
+      },
+      scales: {
+        x: { ...baseScales.x, ticks: { ...baseScales.x.ticks, maxRotation: 35 } },
+        y: { ...baseScales.y, ticks: { ...baseScales.y.ticks, callback: v => '$' + v + 'K' } }
+      },
+      animation: { onComplete: function() {
+        const chart = this;
+        const ctx = chart.ctx;
+        ctx.save();
+        ctx.fillStyle = '#e6edf3';
+        ctx.font = '11px -apple-system,sans-serif';
+        ctx.textAlign = 'center';
+        chart.data.datasets[0].data.forEach((val, i) => {
+          const meta = chart.getDatasetMeta(0);
+          const bar = meta.data[i];
+          ctx.fillText('$' + val + 'K', bar.x, bar.y - 5);
+        });
+        ctx.restore();
+      }}
+    }
+  });
+}
+
+/* Brands chart */
+function renderBrandsChart() {
+  const own = RAW.dealers.find(d => d.is_own);
+  const ownV = filterVehicles(own);
+  const mktV = RAW.dealers.filter(d => !d.is_own && activeDealers.has(d.name)).flatMap(d => filterVehicles(d));
+
+  const countBrands = (arr) => arr.reduce((m, v) => { if (v.manufacturer) m[v.manufacturer] = (m[v.manufacturer]||0)+1; return m; }, {});
+  const ownBrands = countBrands(ownV);
+  const mktBrands = countBrands(mktV);
+  const allBrands = [...new Set([...Object.keys(ownBrands), ...Object.keys(mktBrands)])].sort((a,b) => (ownBrands[b]||0)+(mktBrands[b]||0) - (ownBrands[a]||0) - (mktBrands[a]||0)).slice(0,10);
+
+  mkChart('c-brands', {
+    type: 'bar',
+    data: {
+      labels: allBrands,
+      datasets: [
+        { label: 'Autocentro Mas', data: allBrands.map(b => ownBrands[b]||0), backgroundColor: '#378ADD', borderRadius: 3 },
+        { label: 'Competencia', data: allBrands.map(b => mktBrands[b]||0), backgroundColor: 'rgba(55,138,221,0.2)', borderRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: TICK_COLOR, font: { size: 11 }, boxWidth: 10 } } },
+      scales: {
+        x: { ...baseScales.x, ticks: { ...baseScales.x.ticks, maxRotation: 40 } },
+        y: { ...baseScales.y }
+      }
+    }
+  });
+}
+
+/* Brand table */
+function renderBrandTable() {
+  const allV = RAW.dealers.filter(d => activeDealers.has(d.name)).flatMap(d => filterVehicles(d).map(v => ({...v, dealer: d.name})));
+  const brandDealer = {};
+  allV.forEach(v => {
+    if (!v.manufacturer) return;
+    if (!brandDealer[v.manufacturer]) brandDealer[v.manufacturer] = {};
+    brandDealer[v.manufacturer][v.dealer] = (brandDealer[v.manufacturer][v.dealer]||0) + 1;
+  });
+  const brands = Object.keys(brandDealer).sort();
+  const dealerNames = RAW.dealers.filter(d => activeDealers.has(d.name)).map(d => d.name);
+
+  let html = '<table style="width:100%;border-collapse:collapse;font-size:11px">';
+  html += '<thead><tr><th style="padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.08);color:#8b949e;text-align:left;position:sticky;top:0;background:#161b22">Marca</th>';
+  dealerNames.forEach(n => {
+    html += `<th style="padding:6px 4px;border-bottom:1px solid rgba(255,255,255,0.08);color:#8b949e;text-align:center;position:sticky;top:0;background:#161b22;max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${n}">${n.split(' ')[0]}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+  brands.forEach(b => {
+    html += '<tr>';
+    html += `<td style="padding:5px 8px;border-bottom:1px solid rgba(255,255,255,0.05);color:#e6edf3">${b}</td>`;
+    dealerNames.forEach(n => {
+      const count = brandDealer[b][n] || 0;
+      const bg = count > 0 ? `background:rgba(55,138,221,${Math.min(count/20, 0.5)})` : '';
+      html += `<td style="padding:5px 4px;border-bottom:1px solid rgba(255,255,255,0.05);text-align:center;${bg};color:${count>0?'#e6edf3':'#444'}">${count||''}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  document.getElementById('brand-table-wrap').innerHTML = html;
+}
+
+/* Year price chart */
+function renderYearPriceChart() {
+  const allV = RAW.dealers.filter(d => activeDealers.has(d.name)).flatMap(d => filterVehicles(d));
+  const yearPrices = {};
+  allV.forEach(v => { if (v.year && v.price) { if (!yearPrices[v.year]) yearPrices[v.year] = []; yearPrices[v.year].push(v.price); } });
+  const years = Object.keys(yearPrices).sort();
+  const avgs = years.map(y => Math.round(yearPrices[y].reduce((a,b)=>a+b,0)/yearPrices[y].length/1000));
+
+  mkChart('c-year-price', {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{ data: avgs, borderColor: '#378ADD', backgroundColor: 'rgba(55,138,221,0.1)', borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#378ADD', fill: true, tension: 0.3 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw + 'K promedio' } } },
+      scales: {
+        x: { ...baseScales.x, ticks: { ...baseScales.x.ticks, maxRotation: 45 } },
+        y: { ...baseScales.y, ticks: { ...baseScales.y.ticks, callback: v => '$' + v + 'K' } }
+      }
+    }
+  });
+}
+
+/* Market brands chart */
+function renderMktBrandsChart() {
+  const allV = RAW.dealers.filter(d => activeDealers.has(d.name)).flatMap(d => filterVehicles(d));
+  const brandCounts = {};
+  allV.forEach(v => { if (v.manufacturer) brandCounts[v.manufacturer] = (brandCounts[v.manufacturer]||0)+1; });
+  const top10 = Object.entries(brandCounts).sort((a,b)=>b[1]-a[1]).slice(0,10);
+
+  mkChart('c-mkt-brands', {
+    type: 'doughnut',
+    data: {
+      labels: top10.map(([b]) => b),
+      datasets: [{ data: top10.map(([,c]) => c), backgroundColor: ['#378ADD','#E24B4A','#BA7517','#639922','#1D9E75','#7F77DD','#888780','#D4537E','#E86B3A','#5DCAA5'], borderWidth: 0 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'right', labels: { color: TICK_COLOR, font: { size: 10 }, boxWidth: 10, padding: 6 } } }
+    }
+  });
+}
+
+/* Segments chart */
+function renderSegmentsChart() {
+  const dealerNames = RAW.dealers.filter(d => activeDealers.has(d.name)).map(d => d.name);
+  const above = dealerNames.map(n => {
+    const d = RAW.dealers.find(x => x.name === n);
+    return filterVehicles(d).filter(v => v.price && v.price >= 50000).length;
+  });
+  const below = dealerNames.map(n => {
+    const d = RAW.dealers.find(x => x.name === n);
+    return filterVehicles(d).filter(v => v.price && v.price < 50000).length;
+  });
+
+  mkChart('c-segments', {
+    type: 'bar',
+    data: {
+      labels: dealerNames.map(n => n.split(' ')[0]),
+      datasets: [
+        { label: 'Premium (≥$50K)', data: above, backgroundColor: '#378ADD', borderRadius: 3 },
+        { label: 'Económico (<$50K)', data: below, backgroundColor: '#7F77DD', borderRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: TICK_COLOR, font: { size: 10 }, boxWidth: 10 } } },
+      scales: {
+        x: { ...baseScales.x, stacked: true, ticks: { ...baseScales.x.ticks, maxRotation: 35 } },
+        y: { ...baseScales.y, stacked: true }
+      }
+    }
+  });
+}
+
+/* Operational table */
+function renderOperationalTable() {
+  const tbody = document.getElementById('op-table-body');
+  tbody.innerHTML = '';
+  const sorted = [...RAW.dealers].filter(d => activeDealers.has(d.name)).sort((a,b) => {
+    const av = filterVehicles(a).length;
+    const bv = filterVehicles(b).length;
+    return bv - av;
+  });
+
+  sorted.forEach(dealer => {
+    const filtered = filterVehicles(dealer);
+    const prices = filtered.map(v => v.price).filter(Boolean);
+    const avg = prices.length ? Math.round(prices.reduce((a,b)=>a+b,0)/prices.length) : null;
+    const min = prices.length ? Math.min(...prices) : null;
+    const max = prices.length ? Math.max(...prices) : null;
+    const brandCounts = {};
+    filtered.forEach(v => { if (v.manufacturer) brandCounts[v.manufacturer] = (brandCounts[v.manufacturer]||0)+1; });
+    const topBrand = Object.entries(brandCounts).sort((a,b)=>b[1]-a[1])[0];
+
+    const tr = document.createElement('tr');
+    if (dealer.is_own) tr.className = 'own-row';
+    tr.innerHTML = `
+      <td><strong>${dealer.name}${dealer.is_own ? ' ★' : ''}</strong></td>
+      <td style="color:var(--muted)">${dealer.location}</td>
+      <td><strong>${filtered.length}</strong></td>
+      <td>${min ? '$' + min.toLocaleString() : '—'}</td>
+      <td>${max ? '$' + max.toLocaleString() : '—'}</td>
+      <td>${avg ? '<strong>$' + avg.toLocaleString() + '</strong>' : '—'}</td>
+      <td>${prices.length > 0 ? '<span class="badge b-green">Visible</span>' : '<span class="badge b-red">Oculto</span>'}</td>
+      <td style="color:var(--muted)">${topBrand ? topBrand[0] + ' (' + topBrand[1] + ')' : '—'}</td>
+      <td><a href="${dealer.url}" target="_blank" style="font-size:11px">↗ Ver</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+/* Insights */
+function renderInsights() {
+  const own = RAW.dealers.find(d => d.is_own);
+  const ownV = filterVehicles(own);
+  const allFiltered = RAW.dealers.filter(d => activeDealers.has(d.name)).flatMap(d => filterVehicles(d));
+  const totalCount = allFiltered.length;
+  const ownPct = totalCount > 0 ? ((ownV.length / totalCount) * 100).toFixed(1) : 0;
+  const ownPrices = ownV.map(v => v.price).filter(Boolean);
+  const ownAvg = ownPrices.length ? Math.round(ownPrices.reduce((a,b)=>a+b,0)/ownPrices.length) : 0;
+
+  const competitor = RAW.dealers.filter(d => !d.is_own && activeDealers.has(d.name)).map(d => {
+    const prices = filterVehicles(d).map(v => v.price).filter(Boolean);
+    return { name: d.name, avg: prices.length ? Math.round(prices.reduce((a,b)=>a+b,0)/prices.length) : 0 };
+  }).filter(d => d.avg > 0).sort((a,b) => b.avg - a.avg);
+
+  const premium = ownV.filter(v => v.price && v.price >= 50000).length;
+  const premiumPct = ownV.length > 0 ? Math.round(premium / ownV.length * 100) : 0;
+
+  const insights = [
+    { tag: 'Posición en mercado', val: ownPct + '% del inventario filtrado', desc: `Autocentro Mas tiene ${ownV.length} unidades de ${totalCount} totales en la selección actual.` },
+    { tag: 'Precio promedio propio', val: ownAvg ? '$' + ownAvg.toLocaleString() : 'N/D', desc: `Basado en ${ownPrices.length} unidades con precio visible.` },
+    { tag: 'Segmento premium (≥$50K)', val: premiumPct + '% del inventario', desc: `${premium} de ${ownV.length} unidades en el rango premium.` },
+    { tag: 'Competidor mayor precio prom', val: competitor[0] ? competitor[0].name : 'N/D', desc: competitor[0] ? `Promedio de $${competitor[0].avg.toLocaleString()} vs tu $${ownAvg.toLocaleString()}` : '' },
+    { tag: 'Total marcas representadas', val: new Set(ownV.map(v => v.manufacturer).filter(Boolean)).size + ' marcas', desc: 'En el inventario de Autocentro Mas según filtros actuales.' },
+    { tag: 'Años más recientes (2025-26)', val: ownV.filter(v => v.year >= 2025).length + ' unidades', desc: 'Vehículos modelo 2025 y 2026 en tu inventario actual.' },
+  ];
+
+  const container = document.getElementById('insights-container');
+  container.innerHTML = insights.map(i => `
+    <div class="insight">
+      <div class="insight-tag">${i.tag}</div>
+      <div class="insight-val">${i.val}</div>
+      <div class="insight-desc">${i.desc}</div>
+    </div>
+  `).join('');
+}
+
+/* ── INIT ── */
+async function init() {
+  try {
+    await loadData();
+    buildFilters();
+    renderAll();
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+  } catch (e) {
+    document.getElementById('loading').innerHTML = `
+      <div style="text-align:center;padding:20px">
+        <div style="font-size:32px;margin-bottom:12px">⚠️</div>
+        <p style="color:#E24B4A;font-size:14px">No se pudo cargar la data</p>
+        <p style="color:#8b949e;font-size:12px;margin-top:6px">${e.message}</p>
+        <p style="color:#8b949e;font-size:11px;margin-top:12px">Verifica que el scraper haya corrido al menos una vez</p>
+      </div>`;
+  }
+}
+
+init();
+</script>
+</body>
+</html>
